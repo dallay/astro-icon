@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.2",
-    "astro": "^6.1.4",
+    "astro": "^6.1.10",
     "typescript": "^6.0.2",
     "vite": "^7.0.0"
   }
