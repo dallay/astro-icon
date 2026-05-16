@@ -7,11 +7,11 @@ Astro Icon's main API is an `Icon` component that automatically inlines an `<svg
 
 ## Icon
 
-You can use the `Icon` component by importing it from `astro-icon/components` and rendering it as a normal [Astro Component](https://docs.astro.build/en/core-concepts/astro-components/).
+You can use the `Icon` component by importing it from `@dallay/astro-icon/components` and rendering it as a normal [Astro Component](https://docs.astro.build/en/core-concepts/astro-components/).
 
 ```astro mark="Icon" {6}
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from '@dallay/astro-icon/components'
 ---
 
 <!-- Embed the contents of the `/src/icons/logo.svg` file -->
@@ -49,7 +49,7 @@ The approach uses a novel take on the more traditional [SVG Sprite](https://css-
 
 ```astro
 ---
-import { Icon } from 'astro-icon/components'
+import { Icon } from '@dallay/astro-icon/components'
 ---
 
 <Icon name="logo" />
