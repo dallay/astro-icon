@@ -1,5 +1,12 @@
 # astro-icon
 
+## [1.3.2](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.1...@dallay/astro-icon-v1.3.2) (2026-05-16)
+
+
+### Bug Fixes
+
+* **a11y:** WCAG 2.1 accessibility improvements across Icon component and demo ([#6](https://github.com/dallay/astro-icon/issues/6)) ([af292bc](https://github.com/dallay/astro-icon/commit/af292bcfe229ca8c9f5b001e2ce2cf744de178fd))
+
 ## [1.3.1](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.0...@dallay/astro-icon-v1.3.1) (2026-05-16)
 
 
