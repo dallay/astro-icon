@@ -3,7 +3,16 @@
 > **A community-maintained fork of [`astro-icon`](https://github.com/natemoo-re/astro-icon) by [Nate Moore](https://github.com/natemoo-re), updated for Astro v6.x and Cloudflare Workers compatibility.**
 
 [![npm version](https://img.shields.io/npm/v/@dallay/astro-icon?color=blue)](https://www.npmjs.com/package/@dallay/astro-icon)
+[![npm downloads](https://img.shields.io/npm/dm/@dallay/astro-icon?color=blue)](https://www.npmjs.com/package/@dallay/astro-icon)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Astro v6](https://img.shields.io/badge/Astro-v6+-ff4d03?logo=astro)](https://astro.build)
+[![Cloudflare Ready](https://img.shields.io/badge/Cloudflare-Ready-orange?logo=cloudflare)](https://workers.cloudflare.com/)
+[![GitHub issues](https://img.shields.io/github/issues/dallay/astro-icon)](https://github.com/dallay/astro-icon/issues)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Astro v6](https://img.shields.io/badge/Astro-v6+-ff4d03?logo=astro)](https://astro.build)
+[![Cloudflare Ready](https://img.shields.io/badge/Cloudflare-Ready-orange?logo=cloudflare)](https://workers.cloudflare.com/)
+[![GitHub issues](https://img.shields.io/github/issues/dallay/astro-icon)](https://github.com/dallay/astro-icon/issues)
 
 ---
 
@@ -29,16 +38,48 @@ If the upstream project resumes active development with Astro v6 support, we rec
 
 ## Installation
 
-### Using npm
+Choose your preferred package manager:
+
+### npm
 
 ```sh
 npm install @dallay/astro-icon
 ```
 
-### Using pnpm
+### pnpm
 
 ```sh
 pnpm add @dallay/astro-icon
+```
+
+### yarn
+
+```sh
+yarn add @dallay/astro-icon
+```
+
+### bun
+
+```sh
+bun add @dallay/astro-icon
+```
+
+### pnpm
+
+```sh
+pnpm add @dallay/astro-icon
+```
+
+### yarn
+
+```sh
+yarn add @dallay/astro-icon
+```
+
+### bun
+
+```sh
+bun add @dallay/astro-icon
 ```
 
 Then, add the integration to your `astro.config.mjs`:
