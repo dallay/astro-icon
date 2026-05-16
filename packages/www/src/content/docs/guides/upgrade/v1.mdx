@@ -24,21 +24,21 @@ Update your project’s version of `astro-icon` to the latest version using your
 <TabItem label="npm">
 
 ```sh ins="latest"
-npm install astro-icon@latest
+npm install @dallay/astro-icon@latest
 ```
 
 </TabItem>
 <TabItem label="pnpm">
 
 ```sh ins="latest"
-pnpm add astro-icon@latest
+pnpm add @dallay/astro-icon@latest
 ```
 
 </TabItem>
 <TabItem label="Yarn">
 
 ```sh ins="latest"
-yarn add astro-icon@latest
+yarn add @dallay/astro-icon@latest
 ```
 
 </TabItem>
@@ -57,9 +57,9 @@ In v1, `astro-icon` has become a full-fledged integration.
 
 Update your `astro.config.mjs` file to include the new `astro-icon` integration.
 
-```js title="astro.config.mjs" ins="import icon from \"astro-icon\";" ins="icon()"
+```js title="astro.config.mjs" ins="import icon from \"@dallay/astro-icon\";" ins="icon()"
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
+import icon from "@dallay/astro-icon";
 
 export default defineConfig({
   integrations: [icon()],
@@ -115,7 +115,7 @@ In v1, components are exported from the `astro-icon/components` path.
 Update your import statements to reference `astro-icon/components`.
 
 ```js ins="/components"
-import { Icon } from 'astro-icon/components'
+import { Icon } from '@dallay/astro-icon/components'
 ```
 
 ### Changed: styling attribute
@@ -167,7 +167,7 @@ Remove the `<Sprite.Provider>` wrapper from your pages. Replace any references t
 
 ```diff lang="astro" del="Sprite," ins="Icon" ins="/components"
 ---
-import { Sprite, Icon } from 'astro-icon/components'
+import { Sprite, Icon } from '@dallay/astro-icon/components'
 ---
 
 - <Sprite.Provider>
@@ -206,7 +206,7 @@ Remove any usage of the `optimize` prop. Configure SVGO optimization by passing 
 
 ```js title="astro.config.mjs" {7-15}
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
+import icon from "@dallay/astro-icon";
 
 export default defineConfig({
   integrations: [

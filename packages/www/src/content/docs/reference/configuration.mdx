@@ -9,7 +9,7 @@ Astro Icon is an integration built on top the [Astro](https://astro.build) web f
 
 ```diff lang="js" title="astro.config.mjs" 
 import { defineConfig } from 'astro/config';
-+ import icon from 'astro-icon';
++ import icon from '@dallay/astro-icon';
 
 export default defineConfig({
 	integrations: [
@@ -28,7 +28,7 @@ Filter the specific icons to include from `@iconify-json/*` sets in the final se
 
 ```js {7-12}
 import { defineConfig } from 'astro/config';
-import icon from 'astro-icon';
+import icon from '@dallay/astro-icon';
 
 export default defineConfig({
 	integrations: [
@@ -56,7 +56,7 @@ To use a local icon directory other than the default `src/icons/`, set the `icon
 
 ```js {7}
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
+import icon from "@dallay/astro-icon";
 
 export default defineConfig({
   integrations: [
@@ -75,7 +75,7 @@ Refer to the official [`svgo` configuration options](https://github.com/svg/svgo
 
 ```js {7-24}
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
+import icon from "@dallay/astro-icon";
 
 export default defineConfig({
   integrations: [
