@@ -48,10 +48,25 @@ jobs:
         if: |
           !contains(github.actor, 'dependabot') &&
           (github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login == github.repository_owner)
+        env:
+          HEAD_REF: ${{ github.head_ref }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet || (git add -A && git commit -m "chore(lint): biome auto-fix" && git push)
+          if git diff --quiet; then
+            echo "No lint fixes needed."
+            exit 0
+          fi
+          git add -A
+          git commit -m "chore(lint): biome auto-fix"
+          # actions/checkout leaves a detached HEAD on PR events.
+          # Push back to the source branch explicitly; --force-with-lease
+          # prevents overwriting concurrent pushes that aren't ours.
+          if [ -n "$HEAD_REF" ]; then
+            git push origin "HEAD:${HEAD_REF}" --force-with-lease
+          else
+            git push
+          fi
 
   smoke:
     name: Smoke Test

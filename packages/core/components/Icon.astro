@@ -100,7 +100,7 @@ if (!iconData) {
   throw err;
 }
 
-const _id = `ai:${collection.prefix}:${iconName ?? setName}`;
+const id = `ai:${collection.prefix}:${iconName ?? setName}`;
 
 if (props.size) {
   props.width = props.size;
@@ -108,11 +108,26 @@ if (props.size) {
   delete props.size;
 }
 const renderData = iconToSVG(iconData);
+
+// Determine accessible role:
+// - If a title is provided the icon is meaningful → role="img"
+// - Otherwise it is decorative → aria-hidden="true"
+const isDecorative = !title;
+const descId = desc ? `${id}:desc` : undefined;
 const normalizedProps = {
   ...(renderData.attributes as Partial<IconifyIconBuildResult["attributes"]>),
+  // Prevent SVGs from being focusable in IE/Edge and some browsers
+  focusable: "false" as const,
+  // Decorative icons must be hidden from the accessibility tree (WCAG 1.1.1).
+  // Meaningful icons get role="img" and, when a desc is provided, aria-describedby
+  // pointing to the stable <desc id> so assistive technologies read the description.
+  ...(isDecorative
+    ? { "aria-hidden": "true" as const }
+    : { role: "img" as const, ...(descId ? { "aria-describedby": descId } : {}) }),
   ...props,
 };
-const _normalizedBody = renderData.body;
+// biome-ignore lint/correctness/noUnusedVariables: used in the Astro template below, outside Biome's JS scope
+const normalizedBody = renderData.body;
 
 // biome-ignore lint/correctness/noUnusedVariables: viewBox is extracted to remove it from normalizedProps via delete
 const { viewBox } = normalizedProps;
@@ -123,10 +138,10 @@ if (includeSymbol) {
 
 <svg {...normalizedProps} data-icon={name}>
   {title && <title>{title}</title>}
-  {desc && <desc>{desc}</desc>}
+  {desc && <desc id={`${id}:desc`}>{desc}</desc>}
   {
     inline ? (
-      <Fragment id={id} set:html={normalizedBody} />
+      <Fragment set:html={normalizedBody} />
     ) : (
       <Fragment>
         {includeSymbol && <symbol id={id} viewBox={viewBox} set:html={normalizedBody} />}

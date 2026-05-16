@@ -3,10 +3,40 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Astro Icon — optimized SVG icon component for Astro projects."
+    />
     <title>Astro Icon</title>
   </head>
 
   <body>
-    <slot />
+    <!-- Skip link: allows keyboard/AT users to jump past navigation (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
   </body>
 </html>
+
+<style>
+  /* Visually hidden until focused — required for WCAG 2.4.1 */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    z-index: 9999;
+    border-radius: 0 0 4px 0;
+    transition: top 0.15s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+</style>
