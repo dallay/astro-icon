@@ -1,5 +1,12 @@
 # astro-icon
 
+## [1.3.1](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.0...@dallay/astro-icon-v1.3.1) (2026-05-16)
+
+
+### Bug Fixes
+
+* **lint:** suppress false positive noUnusedVariables on viewBox extraction ([d8e7a55](https://github.com/dallay/astro-icon/commit/d8e7a55ea0223e7fc481dfc95c5338a2f3778acc))
+
 ## [1.3.0](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.2.4...@dallay/astro-icon-v1.3.0) (2026-05-15)
 
 ### Features
