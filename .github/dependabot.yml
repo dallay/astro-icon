@@ -1,0 +1,53 @@
+version: 2
+updates:
+  # Enable version updates for npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    assignees:
+      - "yacosta738"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      astro:
+        patterns:
+          - "astro*"
+          - "@astrojs/*"
+      dev-dependencies:
+        dependency-type: "development"
+        patterns:
+          - "@types/*"
+          - "typescript"
+          - "biome"
+          - "lefthook"
+          - "vitest"
+          - "@vitest/*"
+      ui-dependencies:
+        patterns:
+          - "tailwind*"
+          - "@tailwindcss/*"
+          - "lucide*"
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    assignees:
+      - "yacosta738"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
