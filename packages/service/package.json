@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/dallay/astro-icon#readme",
   "dependencies": {
-    "@iconify/json": "^2.2.473",
+    "@iconify/json": "^2.2.481",
     "@iconify/json-tools": "^1.0.10",
     "etag": "^1.8.1"
   },
   "devDependencies": {
-    "@vercel/node": "^5.8.1"
+    "@vercel/node": "^5.8.9"
   }
 }
