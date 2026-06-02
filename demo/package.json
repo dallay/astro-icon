@@ -15,9 +15,9 @@
     "@iconify-json/ri": "^1.2.10"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^13.5.1",
+    "@astrojs/cloudflare": "^13.6.0",
     "@dallay/astro-icon": "workspace:*",
-    "astro": "^6.3.3",
+    "astro": "^6.4.2",
     "wrangler": "^4.92.0"
   }
 }
