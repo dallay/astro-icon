@@ -1,5 +1,13 @@
 # astro-icon
 
+## [1.3.4](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.3...@dallay/astro-icon-v1.3.4) (2026-08-03)
+
+
+### Dependencies
+
+* **deps:** bump the astro group across 1 directory with 4 updates ([#44](https://github.com/dallay/astro-icon/issues/44)) ([14f7416](https://github.com/dallay/astro-icon/commit/14f7416f8ea0d597f60b78e206ef02186fc19ac4))
+* **deps:** bump the security-updates group across 1 directory with 3 updates ([#31](https://github.com/dallay/astro-icon/issues/31)) ([1ac4f31](https://github.com/dallay/astro-icon/commit/1ac4f31cb81a34ce795a13dbe0ef962b8e229e89))
+
 ## [1.3.3](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.2...@dallay/astro-icon-v1.3.3) (2026-05-16)
 
 
