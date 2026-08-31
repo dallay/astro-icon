@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/dallay/astro-icon#readme",
   "dependencies": {
-    "@iconify/json": "^2.2.496",
+    "@iconify/json": "^2.2.521",
     "@iconify/json-tools": "^1.0.10",
     "etag": "^1.8.1"
   },
