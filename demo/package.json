@@ -17,7 +17,7 @@
   "devDependencies": {
     "@astrojs/cloudflare": "^14.1.7",
     "@dallay/astro-icon": "workspace:*",
-    "astro": "^7.1.6",
+    "astro": "^7.2.8",
     "wrangler": "^4.92.0"
   }
 }
