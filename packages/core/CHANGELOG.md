@@ -1,5 +1,12 @@
 # astro-icon
 
+## [1.3.5](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.4...@dallay/astro-icon-v1.3.5) (2026-10-30)
+
+
+### Bug Fixes
+
+* replace deprecated Iconify JSON tools ([#69](https://github.com/dallay/astro-icon/issues/69)) ([737c32a](https://github.com/dallay/astro-icon/commit/737c32a688c9be8c7e1620a4cdb1a56b496b8fee))
+
 ## [1.3.4](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.3...@dallay/astro-icon-v1.3.4) (2026-10-30)
 
 ### Dependencies
