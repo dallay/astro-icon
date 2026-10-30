@@ -2,24 +2,21 @@
 
 ## [1.3.3](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.2...@dallay/astro-icon-v1.3.3) (2026-05-16)
 
-
 ### Documentation
 
-* **README:** update installation instructions and add package manager options ([ca5c1ec](https://github.com/dallay/astro-icon/commit/ca5c1ec7a018cc230130fa965a470418511d2a7b))
+- **README:** update installation instructions and add package manager options ([ca5c1ec](https://github.com/dallay/astro-icon/commit/ca5c1ec7a018cc230130fa965a470418511d2a7b))
 
 ## [1.3.2](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.1...@dallay/astro-icon-v1.3.2) (2026-05-16)
 
-
 ### Bug Fixes
 
-* **a11y:** WCAG 2.1 accessibility improvements across Icon component and demo ([#6](https://github.com/dallay/astro-icon/issues/6)) ([af292bc](https://github.com/dallay/astro-icon/commit/af292bcfe229ca8c9f5b001e2ce2cf744de178fd))
+- **a11y:** WCAG 2.1 accessibility improvements across Icon component and demo ([#6](https://github.com/dallay/astro-icon/issues/6)) ([af292bc](https://github.com/dallay/astro-icon/commit/af292bcfe229ca8c9f5b001e2ce2cf744de178fd))
 
 ## [1.3.1](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.3.0...@dallay/astro-icon-v1.3.1) (2026-05-16)
 
-
 ### Bug Fixes
 
-* **lint:** suppress false positive noUnusedVariables on viewBox extraction ([d8e7a55](https://github.com/dallay/astro-icon/commit/d8e7a55ea0223e7fc481dfc95c5338a2f3778acc))
+- **lint:** suppress false positive noUnusedVariables on viewBox extraction ([d8e7a55](https://github.com/dallay/astro-icon/commit/d8e7a55ea0223e7fc481dfc95c5338a2f3778acc))
 
 ## [1.3.0](https://github.com/dallay/astro-icon/compare/@dallay/astro-icon-v1.2.4...@dallay/astro-icon-v1.3.0) (2026-05-15)
 

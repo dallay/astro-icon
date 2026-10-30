@@ -50,7 +50,7 @@ body:
     id: bug-reproduction
     attributes:
       label: Link to Minimal Reproducible Example
-      description: 'Use [astro.new](https://astro.new) to create a minimal reproduction of the problem. **A minimal reproduction is required** so that we can help debug your issue!'
-      placeholder: 'https://stackblitz.com/abcd1234'
+      description: "Use [astro.new](https://astro.new) to create a minimal reproduction of the problem. **A minimal reproduction is required** so that we can help debug your issue!"
+      placeholder: "https://stackblitz.com/abcd1234"
     validations:
       required: true
