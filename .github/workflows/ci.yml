@@ -48,4 +48,5 @@ jobs:
           node-version-file: .nvmrc
           cache: "pnpm"
       - run: pnpm install
+      - run: pnpm --filter service test
       - run: pnpm -r build

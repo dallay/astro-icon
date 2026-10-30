@@ -1,4 +1,6 @@
-import { Collection, SVG } from "@iconify/json-tools";
+import { loadCollection, locate } from "@iconify/json";
+import { getIconData } from "@iconify/utils/lib/icon-set/get-icon";
+import { iconToSVG } from "@iconify/utils/lib/svg/build";
 import type { VercelApiHandler } from "@vercel/node";
 import etag from "etag";
 
@@ -6,6 +8,19 @@ const packAliases = new Map([
   ["logo", "fa-brands"],
   ["radix", "radix-icons"],
 ]);
+
+type IconCollection = Awaited<ReturnType<typeof loadCollection>>;
+
+const collections = new Map<string, Promise<IconCollection | null>>();
+
+function getCollection(pack: string): Promise<IconCollection | null> {
+  let collection = collections.get(pack);
+  if (!collection) {
+    collection = loadCollection(locate(pack)).catch(() => null);
+    collections.set(pack, collection);
+  }
+  return collection;
+}
 
 const handler: VercelApiHandler = async (req, res) => {
   const reqOrigin = req.headers.origin;
@@ -37,21 +52,22 @@ const handler: VercelApiHandler = async (req, res) => {
     name = parts.join(":");
   }
 
-  if (packAliases.has(pack)) {
-    pack = packAliases.get(pack);
+  const aliasedPack = packAliases.get(pack);
+  if (aliasedPack) {
+    pack = aliasedPack;
   }
 
-  const collection = new Collection();
-  if (!collection.loadIconifyCollection(pack)) {
+  const collection = await getCollection(pack);
+  if (!collection) {
+    collections.delete(pack);
     // TODO: fuzzy match to provide more helpful error?
     res.status(404).send(`Not Found: pack "${pack}"`);
     return;
   }
 
   if (!name) {
-    const icons = collection.getIcons();
+    const body = JSON.stringify(Object.keys(collection.icons));
     res.setHeader("Content-Type", "application/json");
-    const body = JSON.stringify(Object.keys(icons.icons));
     const resEtag = etag(body);
     if (reqEtag === resEtag) {
       res.status(304).end();
@@ -62,12 +78,15 @@ const handler: VercelApiHandler = async (req, res) => {
     return;
   }
 
-  const data = collection.getIconData(name);
+  const data = getIconData(collection, name);
   if (!data) {
     res.status(404).send(`Not Found: "${name}" in pack "${pack}"`);
     return;
   }
-  const svg = new SVG(data).getSVG({});
+  const rendered = iconToSVG(data, { width: null, height: null });
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" ${Object.entries(rendered.attributes)
+    .map(([attribute, value]) => `${attribute}="${value}"`)
+    .join(" ")}>${rendered.body}</svg>`;
   const resEtag = etag(svg);
   if (reqEtag === resEtag) {
     res.status(304).end();

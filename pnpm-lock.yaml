@@ -84,9 +84,9 @@ importers:
       '@iconify/json':
         specifier: ^2.2.550
         version: 2.2.550
-      '@iconify/json-tools':
-        specifier: ^1.0.10
-        version: 1.0.10
+      '@iconify/utils':
+        specifier: ^3.1.7
+        version: 3.1.7
       etag:
         specifier: ^1.8.1
         version: 1.8.1
@@ -861,10 +861,6 @@ packages:
 
   '@iconify-json/ri@1.2.10':
     resolution: {integrity: sha512-WWMhoncVVM+Xmu9T5fgu2lhYRrKTEWhKk3Com0KiM111EeEsRLiASjpsFKnC/SrB6covhUp95r2mH8tGxhgd5Q==}
-
-  '@iconify/json-tools@1.0.10':
-    resolution: {integrity: sha512-LFelJDOLZ6JHlmlAkgrvmcu4hpNPB91KYcr4f60D/exzU1eNOb4/KCVHIydGHIQFaOacIOD+Xy+B7P1z812cZg==}
-    deprecated: no longer maintained, use @iconify/utils
 
   '@iconify/json@2.2.550':
     resolution: {integrity: sha512-7X+90mjpbgvCRRkOOrwV88L8CfqTUye5SZZXhAa/+131BYN2MYkPNZgNHz2MuaD7h2d2QPruu7HmwuN9v3IfIA==}
@@ -3687,8 +3683,6 @@ snapshots:
   '@iconify-json/ri@1.2.10':
     dependencies:
       '@iconify/types': 2.0.0
-
-  '@iconify/json-tools@1.0.10': {}
 
   '@iconify/json@2.2.550':
     dependencies:

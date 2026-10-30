@@ -1,6 +1,7 @@
 {
   "name": "service",
   "private": true,
+  "type": "module",
   "version": "0.1.0",
   "author": {
     "name": "Nate Moore",
@@ -17,9 +18,12 @@
     "url": "https://github.com/dallay/astro-icon/issues"
   },
   "homepage": "https://github.com/dallay/astro-icon#readme",
+  "scripts": {
+    "test": "node --test api/v1/*.test.ts"
+  },
   "dependencies": {
     "@iconify/json": "^2.2.550",
-    "@iconify/json-tools": "^1.0.10",
+    "@iconify/utils": "^3.1.7",
     "etag": "^1.8.1"
   },
   "devDependencies": {
