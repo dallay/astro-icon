@@ -32,43 +32,8 @@ jobs:
           cache: "pnpm"
       - run: pnpm install
 
-      # Bot and fork PRs have no write access for lint auto-fixes.
-      - name: Lint (check only for bots and forks)
-        if: |
-          contains(github.actor, '[bot]') ||
-          (github.event_name == 'pull_request' && github.event.pull_request.head.repo.owner.login != github.repository_owner)
+      - name: Lint
         run: pnpm run lint
-
-      # Auto-fix + commit on main and same-repository human pull requests.
-      - name: Lint (auto-fix)
-        if: |
-          !contains(github.actor, '[bot]') &&
-          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login == github.repository_owner)
-        run: pnpm run lint:fix || true
-
-      - name: Commit lint fixes
-        if: |
-          !contains(github.actor, '[bot]') &&
-          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login == github.repository_owner)
-        env:
-          HEAD_REF: ${{ github.head_ref }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet; then
-            echo "No lint fixes needed."
-            exit 0
-          fi
-          git add -A
-          git commit -m "chore(lint): biome auto-fix"
-          # actions/checkout leaves a detached HEAD on PR events.
-          # Push back to the source branch explicitly; --force-with-lease
-          # prevents overwriting concurrent pushes that aren't ours.
-          if [ -n "$HEAD_REF" ]; then
-            git push origin "HEAD:${HEAD_REF}" --force-with-lease
-          else
-            git push
-          fi
 
   smoke:
     name: Smoke Test

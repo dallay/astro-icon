@@ -7,7 +7,13 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/dist", "!**/node_modules", "!pnpm-lock.yaml"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/node_modules",
+      "!pnpm-lock.yaml",
+      "!packages/www/src/content/docs/404.md"
+    ]
   },
   "formatter": {
     "enabled": true,
