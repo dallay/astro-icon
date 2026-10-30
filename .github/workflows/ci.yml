@@ -32,23 +32,23 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
 
-      # Check only — forks and Dependabot (no write access to push fixes)
-      - name: Lint (check only — forks and Dependabot)
+      # Bot and fork PRs have no write access for lint auto-fixes.
+      - name: Lint (check only for bots and forks)
         if: |
-          (github.event_name == 'pull_request' && github.event.pull_request.head.repo.owner.login != github.repository_owner) ||
-          contains(github.actor, 'dependabot')
+          contains(github.actor, '[bot]') ||
+          (github.event_name == 'pull_request' && github.event.pull_request.head.repo.owner.login != github.repository_owner)
         run: pnpm run lint
 
-      # Auto-fix + commit — push to main or human PRs from same repo
+      # Auto-fix + commit on main and same-repository human pull requests.
       - name: Lint (auto-fix)
         if: |
-          !contains(github.actor, 'dependabot') &&
+          !contains(github.actor, '[bot]') &&
           (github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login == github.repository_owner)
         run: pnpm run lint:fix || true
 
       - name: Commit lint fixes
         if: |
-          !contains(github.actor, 'dependabot') &&
+          !contains(github.actor, '[bot]') &&
           (github.event_name != 'pull_request' || github.event.pull_request.head.repo.owner.login == github.repository_owner)
         env:
           HEAD_REF: ${{ github.head_ref }}
