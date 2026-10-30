@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "assignees": ["yacosta738"],
+  "timezone": "America/Havana",
+  "schedule": ["before 9am on Monday"],
+  "prConcurrentLimit": 8,
+  "prHourlyLimit": 3,
+  "rangeStrategy": "bump",
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "groupName": "npm dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["astro", "@astrojs/**"],
+      "groupName": "Astro ecosystem"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["@iconify/**", "@iconify-json/**"],
+      "groupName": "Iconify ecosystem"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    }
+  ]
+}
