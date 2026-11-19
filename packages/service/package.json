@@ -22,7 +22,7 @@
     "test": "node --test api/v1/*.test.ts"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.550",
+    "@iconify/json": "^2.2.559",
     "@iconify/utils": "^3.1.7",
     "etag": "^1.8.1"
   },
