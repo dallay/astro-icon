@@ -24,9 +24,9 @@
   "dependencies": {
     "@iconify/json": "^2.2.550",
     "@iconify/utils": "^3.1.7",
-    "etag": "^1.8.1"
+    "etag": "^2.0.0"
   },
   "devDependencies": {
-    "@vercel/node": "^5.10.2"
+    "@vercel/node": "^32.0.0"
   }
 }
