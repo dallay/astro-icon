@@ -66,9 +66,9 @@
     "@iconify/utils": "^3.1.7"
   },
   "devDependencies": {
-    "@types/node": "^26.6.6",
+    "@types/node": "^26.6.11",
     "astro": "^7.4.4",
     "typescript": "^6.0.3",
-    "vite": "^8.3.5"
+    "vite": "^8.4.0"
   }
 }
